@@ -1,0 +1,8 @@
+#tbl_empleyees{
+    width: 100%;
+    border: 1px solid black;
+}
+
+#tbl_empleyees td, th{
+    border: 1px solid black;
+}

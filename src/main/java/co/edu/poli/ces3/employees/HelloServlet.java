@@ -1,4 +1,4 @@
-package co.edu.poli.ces3.employees.employees;
+package co.edu.poli.ces3.employees;
 
 import java.io.*;
 import javax.servlet.http.*;
