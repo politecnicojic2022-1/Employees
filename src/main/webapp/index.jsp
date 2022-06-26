@@ -26,7 +26,7 @@
 <!--<p>a vale: <%= a %></p>
 <b>Nombre: </b><%= employees.get(0).getName() %> -->
 
-<form role="form" action="" method="get">
+<form role="form" action="SrvlEmployee" method="post">
     <fieldset>
         <legend>Información del empleado</legend>
         <label>Identificación</label>
@@ -34,7 +34,7 @@
         <label>Nombre</label>
         <input type="text" name="name" id="name"/><br/><br/>
         <label>Apellido</label>
-        <input type="lastName" id="lastName"/><br/><br/>
+        <input type="text" name="lastName" id="lastName"/><br/><br/>
         <label>Edad</label>
         <input type="number" name="age" id="age"/><br/><br/>
         <input type="submit" value="Guardar"/>

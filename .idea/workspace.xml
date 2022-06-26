@@ -9,10 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4403d6b6-79bb-4053-9752-abcd1a0ca36e" name="Changes" comment="cambios en gitignore">
-      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/poli/ces3/employees/employees/entities/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
+    <list default="true" id="4403d6b6-79bb-4053-9752-abcd1a0ca36e" name="Changes" comment="Creción de tabla y formulario">
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/poli/ces3/employees/servlets/SrvlEmployee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/employees/list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
@@ -26,6 +25,7 @@
       <list>
         <option value="Class" />
         <option value="CSS File" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -68,8 +68,9 @@
     <configuration name="Tomcat 9.0.63" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.63" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8181/employees" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
-      <option name="UPDATING_POLICY" value="update-resources" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
         <artifact name="Employees:war exploded">
           <settings>
@@ -165,7 +166,7 @@
       <option name="presentableId" value="Default" />
       <updated>1655425945439</updated>
       <workItem from="1655425953645" duration="5362000" />
-      <workItem from="1656131765601" duration="5089000" />
+      <workItem from="1656131765601" duration="8829000" />
     </task>
     <task id="LOCAL-00001" summary="Primer commit de la aplicación web java de empleados">
       <created>1655426870365</created>
@@ -181,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655427196265</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Creción de tabla y formulario">
+      <created>1656282606003</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1656282606003</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,6 +209,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Primer commit de la aplicación web java de empleados" />
     <MESSAGE value="cambios en gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambios en gitignore" />
+    <MESSAGE value="Creción de tabla y formulario" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creción de tabla y formulario" />
   </component>
 </project>
