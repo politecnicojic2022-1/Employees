@@ -1,5 +1,6 @@
 <%@ page import="co.edu.poli.ces3.employees.entities.Employee" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.LinkedList" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%
     ArrayList<Employee> employees = new ArrayList();
@@ -19,6 +20,7 @@
     int a = 15;
     Employee juan = new Employee("juan", "perez");
     juan.getId();
+    juan.setAge(20);
     employees.add(juan);
     employees.add(new Employee("diego", "bedoya"));
 %>

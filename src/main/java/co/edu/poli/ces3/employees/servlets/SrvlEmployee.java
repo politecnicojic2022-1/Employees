@@ -12,7 +12,16 @@ import java.util.ArrayList;
 public class SrvlEmployee extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        ServletOutputStream out = response.getOutputStream();
+        response.setContentType("application/json");
+        //out.print("número 1:" + request.getParameter("numero1"));
+        //out.print("número 2:" + request.getParameter("numero2"));
+        int n1 = Integer.parseInt(request.getParameter("numero1"));
+        int n2 = Integer.parseInt(request.getParameter( "numero2"));
 
+       // out.print("la suma es: " + (n1 + n2));
+       // out.print("<br/><br/><br/><br/>el token es:" + request.getHeader("TOKEN"));
+        out.print("{nombre: 'oscar'}");
     }
 
     @Override
