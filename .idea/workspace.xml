@@ -11,9 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4403d6b6-79bb-4053-9752-abcd1a0ca36e" name="Changes" comment="Creción de tabla y formulario">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/poli/ces3/employees/entities/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/poli/ces3/employees/entities/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/poli/ces3/employees/servlets/SrvlEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/poli/ces3/employees/servlets/SrvlEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +166,7 @@
       <updated>1655425945439</updated>
       <workItem from="1655425953645" duration="5362000" />
       <workItem from="1656131765601" duration="10441000" />
-      <workItem from="1656630742904" duration="7462000" />
+      <workItem from="1656630742904" duration="9072000" />
     </task>
     <task id="LOCAL-00001" summary="Primer commit de la aplicación web java de empleados">
       <created>1655426870365</created>
@@ -198,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656286208847</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Creción de tabla y formulario">
+      <created>1656640836730</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1656640836731</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

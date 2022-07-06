@@ -40,6 +40,7 @@ public class SrvlEmployee extends HttpServlet {
         );
 
         employees.add(employee);
+        employees.add(new Employee("Julian", "Cadavid"));
 
         request.setAttribute("employees", employees);
 
