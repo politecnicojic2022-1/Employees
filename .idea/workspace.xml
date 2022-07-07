@@ -9,8 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4403d6b6-79bb-4053-9752-abcd1a0ca36e" name="Changes" comment="Creción de tabla y formulario">
+    <list default="true" id="4403d6b6-79bb-4053-9752-abcd1a0ca36e" name="Changes" comment="Servlet empleados">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/poli/ces3/employees/entities/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/poli/ces3/employees/entities/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/poli/ces3/employees/servlets/SrvlEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/poli/ces3/employees/servlets/SrvlEmployee.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,6 +56,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/LENOVO/IdeaProjects/test",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -167,6 +170,7 @@
       <workItem from="1655425953645" duration="5362000" />
       <workItem from="1656131765601" duration="10441000" />
       <workItem from="1656630742904" duration="9072000" />
+      <workItem from="1657083705146" duration="12058000" />
     </task>
     <task id="LOCAL-00001" summary="Primer commit de la aplicación web java de empleados">
       <created>1655426870365</created>
@@ -203,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656640836731</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Servlet empleados">
+      <created>1657083773653</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1657083773653</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,6 +235,18 @@
     <MESSAGE value="Primer commit de la aplicación web java de empleados" />
     <MESSAGE value="cambios en gitignore" />
     <MESSAGE value="Creción de tabla y formulario" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creción de tabla y formulario" />
+    <MESSAGE value="Servlet empleados" />
+    <option name="LAST_COMMIT_MESSAGE" value="Servlet empleados" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/co/edu/poli/ces3/employees/servlets/SrvlEmployee.java</url>
+          <line>133</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
