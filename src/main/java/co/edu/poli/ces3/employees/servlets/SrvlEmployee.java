@@ -1,27 +1,49 @@
 package co.edu.poli.ces3.employees.servlets;
 
 import co.edu.poli.ces3.employees.entities.Employee;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 @WebServlet(name = "SrvlEmployee", value = "/SrvlEmployee")
 public class SrvlEmployee extends HttpServlet {
+
+    public static ArrayList<Employee> EMPLOYEES = new ArrayList<>(Arrays.asList(
+            new Employee("1111", "Carlos","Perez", 80),
+            new Employee("9999", "Ana","Diaz", 80),
+            new Employee("888888", "Diego","Trujillo", 20),
+            new Employee("1828392", "Diana","Perez", 30)
+    ));
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ServletOutputStream out = response.getOutputStream();
         response.setContentType("application/json");
-        //out.print("número 1:" + request.getParameter("numero1"));
-        //out.print("número 2:" + request.getParameter("numero2"));
-        int n1 = Integer.parseInt(request.getParameter("numero1"));
-        int n2 = Integer.parseInt(request.getParameter( "numero2"));
+        GsonBuilder gsonBuilder = new GsonBuilder();
 
-       // out.print("la suma es: " + (n1 + n2));
-       // out.print("<br/><br/><br/><br/>el token es:" + request.getHeader("TOKEN"));
-        out.print("{nombre: 'oscar'}");
+        Gson gson = gsonBuilder.create();
+
+        if(request.getParameter("employeeId") == null){
+            out.print(gson.toJson(this.EMPLOYEES));
+        }else{
+            Employee empl = this.searchEmployee(request.getParameter("employeeId"));
+            out.print(gson.toJson(empl));
+        }
+        out.flush();
+    }
+
+    private Employee searchEmployee(String employeeId) {
+        for (int i = 0; i < this.EMPLOYEES.size(); i++){
+            if(this.EMPLOYEES.get(i).getId().equals(employeeId)){
+                return this.EMPLOYEES.get(i);
+            }
+        }
+        return null;
     }
 
     @Override
