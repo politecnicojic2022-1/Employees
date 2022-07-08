@@ -3,16 +3,27 @@ package co.edu.poli.ces3.employees.servlets;
 import co.edu.poli.ces3.employees.entities.Employee;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 
 @WebServlet(name = "SrvlEmployee", value = "/SrvlEmployee")
 public class SrvlEmployee extends HttpServlet {
+
+    private GsonBuilder gsonBuilder;
+    private Gson gson;
+    public SrvlEmployee() {
+        gsonBuilder = new GsonBuilder();
+        gson = gsonBuilder.create();
+    }
 
     public static ArrayList<Employee> EMPLOYEES = new ArrayList<>(Arrays.asList(
             new Employee("1111", "Carlos","Perez", 80),
@@ -24,14 +35,11 @@ public class SrvlEmployee extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ServletOutputStream out = response.getOutputStream();
         response.setContentType("application/json");
-        GsonBuilder gsonBuilder = new GsonBuilder();
-
-        Gson gson = gsonBuilder.create();
-
+        this.setAccessControlHeaders(response);
         if(request.getParameter("employeeId") == null){
             out.print(gson.toJson(this.EMPLOYEES));
         }else{
-            Employee empl = this.searchEmployee(request.getParameter("employeeId"));
+            Employee empl = this.findEmployee(request.getParameter("employeeId"));
             out.print(gson.toJson(empl));
         }
         out.flush();
@@ -46,26 +54,49 @@ public class SrvlEmployee extends HttpServlet {
         return null;
     }
 
+    private Employee findEmployee(String employeeId){
+        return this.EMPLOYEES.stream()
+                .filter(empl -> empl.getId().equals(employeeId))
+                .findAny()
+                .orElse(null);
+    }
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //ServletOutputStream out = response.getOutputStream();
-        ArrayList<Employee> employees = new ArrayList<>();
-
-        /*response.setContentType("text/html");
-        out.print("<p>Nombre:"+request.getParameter("name")+"</p>");
-        out.print("<p>Edad:"+request.getParameter("age")+"</p>");*/
+        this.setAccessControlHeaders(response);
+        ServletOutputStream out = response.getOutputStream();
+        response.setContentType("application/json");
+        JsonObject body = this.getParamsFromPost(request);
+        int max = 1000000000, min = 100;
+        Random rd = new Random();
         Employee employee = new Employee(
-                request.getParameter("id"),
-                request.getParameter("name"),
-                request.getParameter("lastName"),
-                Integer.parseInt(request.getParameter("age"))
+                String.valueOf(rd.nextInt(max - min) + min),
+                body.get("name").getAsString(),
+                body.get("lastName").getAsString(),
+                body.get("age").getAsInt()
         );
 
-        employees.add(employee);
-        employees.add(new Employee("Julian", "Cadavid"));
+        this.EMPLOYEES.add(employee);
 
-        request.setAttribute("employees", employees);
+        out.print(gson.toJson(employee));
+        out.flush();
+    }
 
-        request.getRequestDispatcher("views/employees/list.jsp").forward(request,response);
+    private JsonObject getParamsFromPost(HttpServletRequest request) throws IOException {
+        BufferedReader reader = request.getReader();
+        StringBuilder sb = new StringBuilder();
+        String line = reader.readLine();
+        while (line != null) {
+            sb.append(line + "\n");
+            line = reader.readLine();
+        }
+        reader.close();
+
+        return JsonParser.parseString(sb.toString()).getAsJsonObject();
+    }
+
+    private void setAccessControlHeaders(HttpServletResponse resp) {
+        resp.setHeader("Access-Control-Allow-Origin", "*");
+        resp.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS, HEAD, PUT, POST");
     }
 }
